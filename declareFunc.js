@@ -247,7 +247,7 @@ Array.prototype.GroupBy =  function(keyGetter) {
         let checkItem = tmpArr.filter(predicate)
         if (checkItem.length > 0) {
             ele.splice(index, 1); 
-            rerturn;
+            return;
         }
     })
   };
