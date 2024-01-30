@@ -235,12 +235,13 @@ Array.prototype.GroupBy =  function(keyGetter) {
   };
  Array.prototype.deleteObjectFirst = function (predicate) {
     const ele = this
+     let isDelete = false;
     ele.forEach(function (item,index){
         let tmpArr = [item];
         let checkItem = tmpArr.filter(predicate)
-        if (checkItem.length > 0) {
+        if (checkItem.length > 0 && isDelete == false) {
             ele.splice(index, 1); 
-            return;
+            isDelete = true;
         }
     })
   };
