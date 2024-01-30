@@ -240,7 +240,17 @@ Array.prototype.GroupBy =  function(keyGetter) {
         }
     })
   };
-
+ Array.prototype.deleteObjectFirst = function (predicate) {
+    const ele = this
+    ele.forEach(function (item,index){
+        let tmpArr = [item];
+        let checkItem = tmpArr.filter(predicate)
+        if (checkItem.length > 0) {
+            ele.splice(index, 1); 
+            rerturn;
+        }
+    })
+  };
   async function taskRunner(fn, label) {
     const startTime = performance.now();
     console.log(`Task ${label} starting...`);
