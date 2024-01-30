@@ -170,7 +170,14 @@ Array.prototype.remove = function (iterator) {
             this.splice(i, 1);
     }
 }
-
+Array.prototype.removeOne = function (iterator) {
+    for (var i = this.length; i >= 0; i--) {
+        if (iterator && iterator(this[i])) {
+            this.splice(i, 1);
+            i = 0;
+        }
+    }
+}
 function formatNumber(text) {
     return parseFloat(text).toFixed(2)
 }
