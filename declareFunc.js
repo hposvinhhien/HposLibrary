@@ -278,3 +278,12 @@ const debounce = (mainFunction, delay) => {
       mainFunction();
     }, delay);
 };
+
+const tryFunction = (tryfunc) => {
+    try {
+        tryfunc();
+    } catch(err) {
+        console.log(err)
+    }
+}
+
